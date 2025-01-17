@@ -1,5 +1,8 @@
+from sqlite3 import Connection as SqliteConnection
+from interfaces.products_repo import ProductsRepoInterface
+
 class ProductsRepository:
-  def __init__(self, connection) -> None:
+  def __init__(self, connection: SqliteConnection) -> None:
     self.__connection = connection
   
   def find_product_by_name(self, product_name: str) -> tuple:
